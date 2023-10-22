@@ -1,0 +1,27 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+body {
+  margin: 0;
+  color: rgb(199, 199, 199);
+}
+
+button {
+  background: none;
+  border: 2px solid rgb(85, 85, 85);
+  border-radius: 20px;
+
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.87);
+
+}
+
+button:hover {
+  background-color: rgb(85, 85, 85);
+
+}
