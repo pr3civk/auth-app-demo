@@ -9,7 +9,6 @@ const app = express();
 
 const CLIENT_URL = "http://localhost:5173";
 
-
 app.use(
   cookieSession({ name: "session", keys: ["test"], maxAge: 24 * 60 * 60 * 100 })
 );

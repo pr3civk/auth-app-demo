@@ -6,14 +6,18 @@ import Profile from "./pages/profile";
 import ContentLogin from "./components/content-login";
 import ContentLogout from "./components/content-logout";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 import { useState, useEffect, useRef } from "react";
 
 function App() {
   // const [isLogged, setIsLogged] = useState(false);
   const [user, setUser] = useState(null);
-  const navigateRef = useRef(null);
+  // const navigateRef = useRef(null);
+
+  function ProtectedRoute({ element, ...rest }) {
+    return user ? <Route {...rest} element={element} /> : <Navigate to="/" />;
+  }
 
   useEffect(() => {
     const getUser = () => {
@@ -46,7 +50,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router ref={navigateRef}>
+      <Router >
         <Navbar user={user} />
         <Routes>
           <Route
@@ -57,11 +61,7 @@ function App() {
             path="/content"
             element={!user ? <ContentLogout /> : <LoginContent />}
           />
-
-          <Route
-            path="/profile"
-            element={!user ? <ContentLogout /> : <Profile user={user} />}
-          />
+          <ProtectedRoute path="/profile" element={user && <Profile user={user} />}/>
         </Routes>
       </Router>
     </div>
