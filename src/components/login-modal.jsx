@@ -118,7 +118,7 @@ const loginModal = ({ isOpen, setIsOpen }) => {
                   alt="checkbox"
                   onClick={handleCheck}
                 />
-                <span className="remember-me"> Remember me </span>
+                <span className="remember-me" onClick={handleCheck} > Remember me </span>
               </div>
               <div>
                 <span className="forgotten-pass">Forget your password?</span>

@@ -1,23 +1,24 @@
 import "./styles/App.css";
 import Navbar from "./components/Navbar";
-import LoginContent from "./pages/logincontent";
 import Profile from "./pages/profile";
+import ProtectedRoutes from "./auth/ProtectedRoutes";
+import Content from "./components/content";
 
 import ContentLogin from "./components/content-login";
 import ContentLogout from "./components/content-logout";
 
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  // const [isLogged, setIsLogged] = useState(false);
   const [user, setUser] = useState(null);
-  // const navigateRef = useRef(null);
-
-  function ProtectedRoute({ element, ...rest }) {
-    return user ? <Route {...rest} element={element} /> : <Navigate to="/" />;
-  }
+  const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {
     const getUser = () => {
@@ -47,21 +48,22 @@ function App() {
   }, []);
 
   console.log(user);
+  console.log(isLogged);
 
   return (
     <div className="App">
-      <Router >
+      <Router>
         <Navbar user={user} />
         <Routes>
           <Route
             path="/"
             element={user ? <ContentLogin /> : <ContentLogout />}
           />
-          <Route
-            path="/content"
-            element={!user ? <ContentLogout /> : <LoginContent />}
-          />
-          <ProtectedRoute path="/profile" element={user && <Profile user={user} />}/>
+
+          <Route element={<ProtectedRoutes isLogged={isLogged} />}>
+            <Route path="/content" element={<Content />} />
+            <Route path="/profile" element={<Profile user={user} />} />
+          </Route>
         </Routes>
       </Router>
     </div>

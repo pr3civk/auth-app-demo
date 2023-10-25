@@ -1,4 +1,10 @@
 const Profile = ({ user }) => {
+  if (!user) {
+    return <div>Loading...</div>;
+  }
+
+  console.log(user, "PROFILE");
+
   return (
     <div className="profile">
       <div className="profile-content">

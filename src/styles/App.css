@@ -186,6 +186,10 @@
   cursor: pointer;
   font-size: small;
 }
+.forgotten-pass::selection {
+  background-color: #10b734;
+  color: white;
+}
 
 .forgotten-pass:hover {
   border-bottom: 0.6px solid #10b734;
@@ -194,8 +198,12 @@
 .remember-me {
   color: black;
   font-size: small;
+ 
 }
-
+.remember-me::selection {
+  background-color: #10b734;
+  color: white;
+}
 .submitBtn button {
   width: 200px;
   height: 50px;
