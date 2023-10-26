@@ -1,15 +1,21 @@
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const GithubStrategy = require("passport-github2").Strategy;
 // const FacebookStrategy = require("passport-facebook").Strategy;
-
 const passport = require("passport");
 
-const GOOGLE_CLIENT_ID =
-  "638912114324-b2ga67pimtebcb75s4kjnb3kj455lpt3.apps.googleusercontent.com";
-const GOOGLE_CLIENT_SECRET = "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";
+const {
+  GoogleLogin,
+  GooglePass,
+  GithubLogin,
+  GithubPass,
+} = require("./auth/passwords");
 
-GITHUB_CLIENT_ID = "9b40149896219d7c72f0";
-GITHUB_CLIENT_SECRET = "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7bc928bb470c";
+const GOOGLE_CLIENT_ID =
+GoogleLogin;
+const GOOGLE_CLIENT_SECRET = GooglePass;
+
+GITHUB_CLIENT_ID = GithubLogin;
+GITHUB_CLIENT_SECRET = GithubPass;
 
 passport.use(
   new GoogleStrategy(
@@ -50,8 +56,6 @@ passport.use(
 //     }
 //   )
 // );
-
-
 
 passport.serializeUser((user, done) => {
   done(null, user);
