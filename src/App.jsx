@@ -37,7 +37,7 @@ function App() {
         .then((resObject) => {
           setUser(resObject.user);
           setIsLogged(true);
-          console.log("task success")
+          console.log("Login successed")
           // console.log(user);
         })
         .catch((err) => {
