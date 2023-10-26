@@ -14,6 +14,7 @@ passport.use(
     },
     function (accessToken, refreshToken, profile, done) {
       done(null, profile);
+      // console.log(accessToken, refreshToken)
     }
   )
 );
@@ -24,4 +25,5 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser((user, done) => {
   done(null, user);
+  
 });

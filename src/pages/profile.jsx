@@ -3,7 +3,7 @@ const Profile = ({ user }) => {
     return <div>Loading...</div>;
   }
 
-  console.log(user, "PROFILE");
+  // console.log(user, "PROFILE");
 
   return (
     <div className="profile">

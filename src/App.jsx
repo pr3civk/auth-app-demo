@@ -1,6 +1,6 @@
 import "./styles/App.css";
-import Navbar from "./components/Navbar";
-import Profile from "./pages/profile";
+import Navbar from "./components/navbar";
+import Profile from "./pages/Profile";
 import ProtectedRoutes from "./auth/ProtectedRoutes";
 import Content from "./components/content";
 
@@ -11,7 +11,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
 } from "react-router-dom";
 
 import { useState, useEffect } from "react";
@@ -38,7 +37,8 @@ function App() {
         .then((resObject) => {
           setUser(resObject.user);
           setIsLogged(true);
-          console.log(user);
+          console.log("task success")
+          // console.log(user);
         })
         .catch((err) => {
           console.log(err);
@@ -47,8 +47,8 @@ function App() {
     getUser();
   }, []);
 
-  console.log(user);
-  console.log(isLogged);
+  // console.log(user);
+  // console.log(isLogged);
 
   return (
     <div className="App">
