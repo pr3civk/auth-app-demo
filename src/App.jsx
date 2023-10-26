@@ -3,7 +3,6 @@ import Navbar from "./components/navbar";
 import Profile from "./pages/Profile";
 import ProtectedRoutes from "./auth/ProtectedRoutes";
 import Content from "./components/content";
-
 import ContentLogin from "./components/content-login";
 import ContentLogout from "./components/content-logout";
 
@@ -14,6 +13,11 @@ import {
 } from "react-router-dom";
 
 import { useState, useEffect } from "react";
+
+
+
+
+
 
 function App() {
   const [user, setUser] = useState(null);

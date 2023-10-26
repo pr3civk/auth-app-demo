@@ -31,9 +31,15 @@ const loginModal = ({ isOpen, setIsOpen }) => {
   };
 
   const handleGoogleLogin = () => {
-    window.open("http://localhost:5000/auth/google", "_self")
-  }
+    window.open("http://localhost:5000/auth/google", "_self");
+  };
 
+  const handleGithubLogin = () => {
+    window.open("http://localhost:5000/auth/github", "_self");
+  };
+  const handleFacebookLogin = () => {
+    window.open("http://localhost:5000/auth/facebook", "_self");
+  };
   return (
     <div className="modal-overlay">
       <div className="modal-content">
@@ -66,7 +72,7 @@ const loginModal = ({ isOpen, setIsOpen }) => {
             </svg>
             <span>Sign in with Google</span>
           </div>
-          <div className="loginFacebook">
+          <div className="loginFacebook" onClick={handleFacebookLogin}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -79,7 +85,7 @@ const loginModal = ({ isOpen, setIsOpen }) => {
             </svg>
             <span>Sign in with Facebook</span>
           </div>
-          <div className="loginGithub">
+          <div className="loginGithub" onClick={handleGithubLogin}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -118,7 +124,10 @@ const loginModal = ({ isOpen, setIsOpen }) => {
                   alt="checkbox"
                   onClick={handleCheck}
                 />
-                <span className="remember-me" onClick={handleCheck} > Remember me </span>
+                <span className="remember-me" onClick={handleCheck}>
+                  {" "}
+                  Remember me{" "}
+                </span>
               </div>
               <div>
                 <span className="forgotten-pass">Forget your password?</span>
