@@ -8,7 +8,7 @@ const {
   GooglePass,
   GithubLogin,
   GithubPass,
-} = require("./auth/passwords");
+} = require("./secret/passwords");
 
 const GOOGLE_CLIENT_ID =
 GoogleLogin;

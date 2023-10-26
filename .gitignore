@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 *.s
 *.sol
-passwords.js
+secret.js
