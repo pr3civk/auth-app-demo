@@ -6,18 +6,9 @@ import Content from "./components/content";
 import ContentLogin from "./components/content-login";
 import ContentLogout from "./components/content-logout";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { useState, useEffect } from "react";
-
-
-
-
-
 
 function App() {
   const [user, setUser] = useState(null);
@@ -41,7 +32,7 @@ function App() {
         .then((resObject) => {
           setUser(resObject.user);
           setIsLogged(true);
-          console.log("Login successed")
+          console.log("Login successed");
           // console.log(user);
         })
         .catch((err) => {
