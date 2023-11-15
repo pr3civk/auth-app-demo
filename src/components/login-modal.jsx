@@ -11,7 +11,7 @@ const loginModal = ({ isOpen, setIsOpen }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   if (!isOpen) {
-    return null;
+    return ;
   }
 
   const handleExitClick = () => {

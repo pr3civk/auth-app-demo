@@ -126,6 +126,8 @@
   font-weight: 500;
   font-size: large;
   cursor: pointer;
+
+  transition: all 0.3s;
 }
 
 .loginBox span {
@@ -198,7 +200,6 @@
 .remember-me {
   color: black;
   font-size: small;
- 
 }
 .remember-me::selection {
   background-color: #10b734;
@@ -241,7 +242,7 @@
   margin: 50px;
 }
 
-.profile-content{
+.profile-content {
   display: flex;
   align-items: center;
   flex-direction: column;
