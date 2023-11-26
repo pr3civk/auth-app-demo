@@ -1,5 +1,4 @@
 
-
 module.exports = {
   GoogleLogin,
   GooglePass,
